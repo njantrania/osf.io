@@ -1,0 +1,468 @@
+*********
+Changelog
+*********
+
+0.53.0 (2015-10-08)
+===================
+
+- Use JWTs for authenticating with Waterbutler and MFR.
+
+0.52.0 (2015-10-07)
+===================
+
+- Add Share button on file detail pages with UI for embedding rendered files.
+- User profiles can have multiple personal websites.
+- Update Add contributor UI to show current contributors in search.
+- APIv2: Lots of documentation updates.
+- APIv2: Fix bug that caused a 500 when updating a user's name.
+- APIv2: Fix bug that caused an invalid log when updating a Node's title or description.
+- Dev: Remove dead file GUID code left over from 0.50.0.
+
+0.51.0 (2015-09-24)
+===================
+
+- Alpha release of API v2.
+
+0.50.0 (2015-09-17)
+===================
+
+- Migration of all addon file collecitons to a single GuidFile collection.
+
+0.49.0 (2015-09-11)
+===================
+
+- Add email subscriptions to file events, configurable from project settings.
+- File rendering: Add support for multi-sheet XLSX files.
+- File rendering: Add filtering support for tabular formats.
+- APIv2: Responses are compliant with the JSON API 1.0 spec.
+- APIv2: Unauthenticated responses correctly return a 401 rather than 403 response.
+- APIv2: Add endpoints and UI for creating Developer Applications (hidden until APIv2 is released).
+- Log file rename events.
+
+0.48.0 (2015-08-31)
+===================
+
+- Add project settings that allows a project's wiki to be editable by any OSF user.
+- MD5 and SHA1 hashes appear in a file's Revisions table.
+- Update UI for OSF for Meetings page.
+- Various UI improvements.
+
+0.47.0 (2015-08-15)
+===================
+
+- Project registrations require approval from admin contributors.
+- Add tokens module for implementing JWT token-based actions. Currently allows
+generating URLs for registration approval/disapproval, embargo
+approval/disapproval, and retraction approval/disapproval.
+- Change sign-up flow: users are taken to Dashboard after confirming their
+email address.
+- APIv2: Fix serialization of Node tags. Remove Node system tags from
+response.
+- APIv2: Fix node and user endpoints so that they don't return deleted
+nodes/users.
+- APIv2: Implement POST and PATCH for the User resource.
+
+0.46.0 (2015-08-17)
+===================
+
+- Send email notification when user is added to a project.
+- Condense large contributor lists on the Project Overview page; make them expand/collapse-able.
+- SHARE: Major refactor: Query formatting and aggregations done client-side;
+add initial code for displaying raw and normalized documents.
+- SHARE: Search uses latest version of SHARE Schema.
+- APIv2: Add functionality for creating components.
+- APIv2: Fix bugs with the /me/ shorthand in URLs.
+- Add dates to registrations in search results.
+- Many UI consistency fixes.
+
+0.45.0 (2015-08-10)
+===================
+
+- S3: Uploads to S3 are encrypted.
+- S3: When creating a bucket, allow selecting bucket location.
+- UI fixes.
+
+0.44.0 (2015-07-29)
+===================
+
+- Add "View on" links to files stored in figshare, GitHub, and Google Drive.
+- API: Allow "me" to be used as a shortcut in URLs for the current authenticated user, e.g. "/users/me", "users/me/nodes/".
+- API: Bug fixes.
+- UI and language fixes.
+
+0.43.0 (2015-07-22)
+===================
+
+- Improved add-on user settings UI.
+- Improved wiki menu/table of contents (based on Treebeard).
+- More style changes for consistency with OSF Style Guidelines.
+- Many UI bug fixes.
+- Dev: Allow markup-safe rendering of mako files by passing ``trust=False`` parameter to OsfWebRenderer.
+
+0.42.6 (2015-07-14)
+===================
+
+- Enable parallel uploads for OSF Storage, figshare, Box.com, Dropbox, S3, and Google Drive.
+- Improve performance when uploading large files.
+
+0.42.0 (2015-07-13)
+===================
+
+- File renderer: Support for rendering .ppt, .pptx, .xlt, .svg, and many more formats.
+- Dataverse: Can select between different Dataverse repositories.
+- Site-wide style changes which implement the new OSF Style Guidelines (https://github.com/CenterForOpenScience/osf-style)
+- Improve look and feel of FAQ page.
+- Can upload files to a new project from the Dashboard.
+- Dev: Remove legacy API key-related code.
+- Dev: Fix spurious session creation.
+- Many UI bug fixes.
+
+0.41.0 (2015-06-24)
+===================
+
+- Updated landing page and navbar UI.
+- API: DELETE Node endpoint.
+- API: Add support for Sentry.
+- Dev: Add jshint to Travis builds.
+- Many UI bug fixes.
+
+0.40.0 (2015-06-22)
+===================
+
+- Registrations must be retracted rather than made private.
+- Registrations may be embargoed for up to four years. During this period, a
+registration remains private.
+- Addon files get archived when they are registered.
+
+0.39.0 (2015-06-15)
+===================
+
+- Many bug fixes and UI improvements. See
+https://github.com/CenterForOpenScience/osf.io/issues?page=1&q=milestone%3A0.39.0+is%3Aclosed
+for a list of closed PRs.
+
+0.38.0 (2015-06-07)
+===================
+
+- API v2 pre-release
+- Modular File Renderer as a service
+- File editing user interface improvements
+- Collaborative file editing for text files
+
+0.37.0 (2015-05-25)
+===================
+
+- Move & Copy files/folders between storage providers and nested folders
+- Rename files and folders
+- Download folders as Zip
+- OSF Storage deleted files/folders are moved to a "trash bin" collection
+- Central Authentication Service (CAS & Federated Authentication)
+- Enhanced logging with direct links to files/folder objects
+
+0.36.0 (2015-05-15)
+===================
+
+- Updated UI for project organizer and file browser: multi-select, action
+toolbar, batch delete.
+- Can merge user accounts by adding a confirmed user's email address as a
+secondary email.
+
+0.35.0 (2015-05-06)
+===================
+
+- All projects, regardless of their category (Hypothesis, Methods and
+		Measures, etc.), can have subprojects within them.
+- Add buttons on Account Settings page to request exporting account data and
+deactivating account.
+
+0.34.0 (2015-04-28)
+===================
+
+- Add ability to create folders to storage addons.
+
+Migrations
+----------
+
+- scripts/osfstorage/migrate_from_oldels.py
+- scripts/osfstorage/finish_oldel_migration.py
+
+0.33.10 (2015-04-27)
+====================
+
+- Add migrations necessary to support OSF Storage folders.
+- Fixes to DISK_SAVING_MODE.
+
+0.33.0 (2015-04-20)
+===================
+
+- Update Dataverse addon for compatibility with Dataverse 4.0.
+
+0.32.0 (2015-04-18)
+===================
+
+- Add file tree to file detail pages.
+
+0.31.0 (2015-04-12)
+===================
+
+- Updates to SHARE search API, UI, and documentation page.
+- Add SHARE provider registration page.
+- Users can associate multiple emails to their account.
+- DOIs and ARKs can be created for public registrations.
+- Updated login UI.
+- Fix consistency of addon logs display.
+- Dev: Refactor folderpicker for consistency of addon settings UI.
+- Dev: Update markdown-it to version 4.1 along with plugins
+markdown-it-sanitizer, markdown-it-toc, and markdown-toc-video.
+
+0.30.0 (2015-03-27)
+===================
+
+- Wiki: Single-column view: uses page scrolling rather than container
+scrolling when only one column is enabled.
+- SHARE: Updated UI: added filtering by provider.
+- Remove combined login/register/forgot-password page. Sign-in can be done in the navbar.
+Registration can be done on the landing page.
+- Dev: Add unique compound indices for addon file GUID collections.
+- Dev: Improved speed of Travis CI builds.
+- Dev: Cleanup of dead frontend code.
+- Dev: Automated auditing of Glacier backups and parity files.
+
+0.29.0 (2015-03-19)
+===================
+
+- Improved sign-in: add sign-in form to navbar; remove two-factor input from sign-in form.
+- Upgrade to newest modular-file-renderer with improved PDF rendering.
+- Fix rendering of PDFs and PDB files in Safari and IE.
+- Updated Getting Started page.
+- SHARE: Add endpoint for paginated ATOM feed.
+- SHARE: Remove hardcoded provider code and information.
+- Dev: Search migrations no longer result in search downtime.
+- Dev: Lots of dead code removed from addons.
+- Dev: Updates to front-end dependencies. Manage more dependencies with npm rather than bower.
+- Dev: Add JS testing stack.
+- Dev: Upgrade to Font Awesome 4.
+- Lots of minor UI fixes.
+
+0.28.0 (2015-02-28)
+===================
+
+- Add email notifications. Can subscribe to new comments made on projects and
+components. Emails can be sent in "transactional" or "digest" mode.
+
+0.27.0 (2015-02-27)
+===================
+
+- Add Mendeley addon.
+- Add Zotero addon.
+- Add Google Drive addon.
+- Add Box.com addon.
+- New wiki layout with toggle-able columns.
+- New client-side markdown renderer, with support for table of contents
+(@[toc](Table of Contents)) and embedded YouTube and Vimeo videos
+(@[youtube](<video_id>) or @[vimeo](<video_id>)). NOTE: Wiki versions created before this
+release date will still use the older renderer. Update your wikis to use the new
+renderer.
+
+0.26.0 (2015-02-20)
+===================
+
+- Change to permissions model: Admins on a project are able to view and
+register private subprojects and components.
+
+0.25.0 (2015-02-15)
+===================
+
+- Wiki: Real-time collaborative editing powered by ShareJS.
+- Wiki: Markdown snippets support.
+- Wiki: Add MathJax support.
+- Files: File versions are retrieved from Waterbutler.
+- Files: Extensive refactor to unify file detail pages.
+- CiteProc-compliant citation widget. Add an extra input to select from
+hundreds of citation styles.
+- Developers: CSS is now loaded within JS modules using webpack. Webassets is
+removed.
+- Various UI fixes.
+
+0.24.0 (2015-01-29)
+===================
+
+- Significant UI changes sitewide, esp. with navbar, project navigation, project overview widgets, project
+organizer.
+- New filebrowser. Replace HGrid with treebeard. Affects project organizer,
+	files viewer, and conference poster view.
+- Use the waterbutler service for handling all storage addon CRUD.
+
+0.23.0 (2015-01-16)
+===================
+
+- Developers: Use webpack for asset bundling and minification. All JS modules
+follow the CommonJS module style. Replaces script.js and webassets.
+- Enable the Notifications widget on the user settings page.
+- Add "Edit your profile" button on user profile pages. Remove "in-place"
+profile editing.
+- Email confirmation tokens expire after 24 hours.
+- Lots of refactoring to the conference email submission service.
+- Various minor UI fixes.
+- Developers: Update stale requirements: celery, bleach, furl,
+elasticsearch.py.
+
+0.22.0 (2014-12-17)
+===================
+
+- Add API for subscribing/unsubscribing users to Mailchimp mailing lists. Add
+sync_email.py script to add all registered, confirmed users to the OSF General
+Mailing list.
+- Add "Add to Dashboard" button in project header to add a project to the
+dashboard organizer.
+- Add "Account Settings" page with form to change password.
+- Growl-style notifications and messages.
+- Developers: Switch elasticsearch client to elasticsearch-py.
+- Developers: Remove ``get_current_user`` function. Use the auth decorators
+(e.g. ``must_be_logged_in`` instead).
+
+0.21.17 (2014-12-02)
+====================
+
+Hotfix release
+
+- Add an endpoint for receiving the webhook payload from the OSF upload
+service when files are backed up to a Amazon Glacier archive.
+- Fix a bug in accessing nested files in S3 addon.
+
+0.21.13 (2014-11-24)
+====================
+
+Hotfix release
+
+- Display warning about private Github repos on a public project on files and
+statistics pages.
+- Refactor celery task for rendering files so that file contents are not
+passed to message broker.
+- Use celery to asynchronously provision Piwik sites.
+
+0.21.0 (2014-11-19)
+===================
+
+- OSF storage addon now uses the new OSF Upload Service backed by Rackspace
+Cloudfiles.
+- UI and backend improvements to search.
+- UI fixes to addons' file detail pages.
+- Enable drag-and-drop uploads from Project Overview page.
+
+0.20.0 (2014-10-31)
+===================
+
+Lots of new UI features and responsiveness improvements.
+
+- "Onboarder" interface: Go to a project, create a project, register a project, and upload files from the dashboard.
+- Responsive index page, header, footer, project navbars, login page, public activity, and user activity meters.
+- Various minor UI fixes to user settings page and view file pages.
+
+0.19.0 (2014-10-22)
+===================
+
+- Wiki names have mixed-case page names.
+- Allow mixed casing in wiki page names.
+- Wiki rename events are logged.
+- Improved load time of Getting Started page, as well as some minor UI fixes.
+- Improvements and bugfixes to user settings pages.
+- Various UI fixes to the wiki.
+- Fix importing Dataverse authentication to a project.
+- Fix project "Link" counts and lists.
+- Modal dialogs are more visually consistent.
+- Language fixes on FAQ page.
+
+0.18.0 (2014-10-14)
+===================
+
+- Paginate search results in Add Contributor widget.
+- Speed improvements to contributor manager widget.
+- Add "ongoing" option to Education and Employment sections of user profile.
+- Improved mimetype detection when downloading a file through the Github
+addon.
+- Unread comment counts appear in comment tab.
+- Lots of bug fixes and minor UI improvements to the wiki.
+- Wiki page names can have punctuation and special characters.
+- Lots of UI fixes to the profile configuration pages.
+- Larger project title and description inputs.
+- Confirmation codes for project deletion are more fun =)
+- Allow multiple users to authenticate with the same Github credentials for
+the Github addon.
+- Includes all fixes from the "Sprint: Initial" milestone: https://github.com/CenterForOpenScience/openscienceframework.org/issues?q=milestone%3A%22Sprint+%3A+Initial%22+
+- Update required versions of requests, webassets, and bleach.
+
+Migrations
+----------
+
+- scripts/migrate_piwik_derived_nodes.py
+- scripts/migration/migrate_profile_dates.py
+- scripts/migrate_github_oauth_settings.py
+
+Schema changes
+--------------
+
+- Remove fork_list and registration_list fields from Node model. NOTE: A
+migration was NOT performed to remove these fields.
+- Add AddonGithubOauthSettings model.
+- Remove oauth_access_token and oauth_token_type fields from
+AddonGitHubUserSettings model.
+
+0.17.0 (2014-09-23)
+===================
+
+- New project organizer on user dashboard.
+- Improvements to wiki interface.
+- Allow wiki pages to be deleted.
+- Developers: Switch to the TokuMX MongoDB distribution for handling database
+transactions.
+- Developers: Add a number of missing JS error handlers.
+- Developers: ``$.osf.postJSON`` and ``$.osf.putJSON`` no longer take
+callbacks as arguments. They return jQuery XHR objects, so use the Promise
+interface instead.
+
+0.16.1 (2014-09-12)
+===================
+
+- Developers: Add JS error handling where it was missing.
+- Developers: Add code for TokuMX transactions, but disable it for now.
+
+0.16.0 (2014-09-04)
+===================
+
+- Add two-factor authentication.
+- Developers: Remove all imports from ``framework/__init__.py``. This solves
+and prevents a number of circular import problems throughout the codebase.
+
+
+0.15.1 (2014-08-28)
+===================
+
+- Bugfix release. Fixes a number of minor UI bugs.
+- Fix anonymization in HTTP API.
+
+0.15.0 (2014-08-11)
+===================
+
+- View-only links: Add option to anonymize contributors.
+- Wiki: Add support for fenced code blocks; syntax highlighting; allow ID attributes in tags.
+- Improvements to "Add contributors" UI: Identicons; show projects in common.
+- Non-contributors don't see tags input if there are no tags on a project.
+- Add prompt if there are unsaved wiki changes.
+- Wiki logs link to wiki pages.
+- Add confirmation dialog when deselecting addons from the user profile page.
+- Registered users no longer have "key ring" of view-only link keys. View-only
+links will appear the same, regardless of whether you are logged in or not.
+- Project deletion events are logged.
+- Developers: All deprecated Solr code removed.
+- Developers: Bower components are no longer added to the git tree. Use `bower
+install` to installthem.
+- Developers: Various improvements to logging.
+- Developers: ``URLLookup`` class is deprecated. Use ``api_url_for`` and
+``web_url_for`` in your tests.
+- Developers: Test cases that subclass ``OsfTestCase`` *must* call ``super()``
+in the ``setUp`` and ``tearDown`` methods.
+- Developers: Update stale requirements.
+- Various bugfixes and minor UI improvements.
+
+# vi: ft=markdown
